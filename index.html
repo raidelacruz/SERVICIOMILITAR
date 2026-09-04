@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuartel Fuerte Hoyos Rubio | Portal Oficial del Servicio Militar - Ejército del Perú</title>
+  
+  <!-- Favicon Oficial -->
+  <link rel="icon" type="image/jpeg" href="https://tse1.mm.bing.net/th/id/OIP.b_bTts_yL-XQbV5UbnHLIQHaHQ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+  
+  <!-- Tipografía Apple (Inter & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos Tácticos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Franja Bicolor Superior -->
+  <div class="top-peru-ribbon"></div>
+
+  <!-- Cabecera Principal -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-crest-box">
+          <!-- Logo Oficial del Ejército del Perú -->
+          <img src="https://tse1.mm.bing.net/th/id/OIP.b_bTts_yL-XQbV5UbnHLIQHaHQ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Escudo Ejército del Perú" class="brand-crest-img">
+        </div>
+
+        <div class="brand-text">
+          <h1>Ejército del Perú <span>• Fuerte Hoyos</span></h1>
+          <div class="brand-subtitle">
+            <span>Cuartel Gral. Div. Rafael Hoyos Rubio</span>
+            <span class="badge-location">Rímac, Lima • II División</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <div class="status-chip">
+          <span class="status-dot"></span>
+          <span>SMV 2026</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Carrusel Hero con Fotos Oficiales -->
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Inyectado por JS -->
+      </div>
+
+      <!-- Botones de navegación -->
+      <button class="carousel-nav-btn carousel-prev" id="carouselPrevBtn" aria-label="Anterior">‹</button>
+      <button class="carousel-nav-btn carousel-next" id="carouselNextBtn" aria-label="Siguiente">›</button>
+
+      <!-- Indicadores -->
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+
+  <!-- Buscador y Segmented Tabs -->
+  <section class="controls-section">
+    <div class="search-bar-box">
+      <span class="search-icon-left">🔍</span>
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="Buscar por himno, cántico de trote, manual doctrinario, brigada o trámite SMV (ej: Cenepa, RAG-01, Beca 18, Fuerte Hoyos)..."
+        autocomplete="off"
+      >
+      <button id="clearSearchBtn" class="search-clear-btn" title="Limpiar búsqueda">✕</button>
+    </div>
+
+    <!-- Pestañas de categoría -->
+    <div class="segmented-tabs-wrapper">
+      <button class="seg-tab-btn active" data-category="todos">
+        <span>🏛️ Todos</span>
+        <span class="seg-count" id="count-todos">0</span>
+      </button>
+      <button class="seg-tab-btn" data-category="himnos">
+        <span>🇵🇪 Himnos y Marchas</span>
+        <span class="seg-count" id="count-himnos">0</span>
+      </button>
+      <button class="seg-tab-btn" data-category="canticos">
+        <span>🏃 Cánticos de Trote</span>
+        <span class="seg-count" id="count-canticos">0</span>
+      </button>
+      <button class="seg-tab-btn" data-category="libros">
+        <span>📖 Biblioteca Doctrinal</span>
+        <span class="seg-count" id="count-libros">0</span>
+      </button>
+      <button class="seg-tab-btn" data-category="documentos">
+        <span>📋 Documentos SMV</span>
+        <span class="seg-count" id="count-documentos">0</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contenedor Principal de Recursos -->
+  <main class="main-content" id="mainContent">
+    <div class="content-header-row">
+      <h2 class="content-section-title" id="currentSectionTitle">Todos los Recursos Oficiales</h2>
+      <span class="results-meta" id="resultsMeta">Cargando...</span>
+    </div>
+
+    <!-- Grid de Tarjetas -->
+    <div class="resource-grid" id="resourceGrid">
+      <!-- Inyectado por JS -->
+    </div>
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="main-footer">
+    <div class="footer-hero-motto">¡UNIDOS, FIRMES Y DIGNOS POR LA PATRIA!</div>
+    <p>Cuartel General de División Rafael Hoyos Rubio — Rímac, Lima</p>
+    <p style="font-size: 0.8rem; margin-top: 0.35rem; opacity: 0.7;">
+      II División de Ejército • 1ra Brigada Multipropósito 'Mariscal Eloy G. Ureta' • Servicio Militar Voluntario
+    </p>
+  </footer>
+
+  <!-- ==========================================================================
+       STICKY AUDIO PLAYER (REPRODUCCIÓN DE AUDIO REAL DESDE YOUTUBE / VOZ / BANDA)
+       ========================================================================== -->
+  <div class="sticky-player" id="stickyPlayer">
+    <!-- Contenedor Mini-Iframe de YouTube para reproducción de audio real -->
+    <div id="ytPlayerContainer" style="display: none; margin-bottom: 0.5rem;"></div>
+
+    <div class="player-grid">
+      <!-- Info de la pista -->
+      <div class="track-info-cell">
+        <div class="track-cover-art">
+          <span>🎺</span>
+        </div>
+        <div class="track-texts">
+          <div class="track-title" id="playerTrackTitle">Seleccione una marcha</div>
+          <div class="track-subtitle" id="playerTrackSub">Fuerte Hoyos • Ejército del Perú</div>
+        </div>
+      </div>
+
+      <!-- Controles y Selector de Modo de Audio -->
+      <div class="player-core-cell">
+        <div style="display: flex; align-items: center; gap: 0.8rem;">
+          <!-- Selector de Modo de Audio -->
+          <div class="audio-mode-selector">
+            <button class="mode-pill-btn active" id="modeYoutubeBtn" title="Audio real del video oficial con coros y banda completa">
+              ▶️ Audio Real
+            </button>
+            <button class="mode-pill-btn" id="modeVozBtn" title="Voz de mando militar declamando la letra">
+              🎙️ Voz Militar
+            </button>
+            <button class="mode-pill-btn" id="modeBandaBtn" title="Trompetas y percusión marcial">
+              🎺 Banda
+            </button>
+          </div>
+
+          <!-- Botón Play Central -->
+          <button class="btn-play-hero" id="mainPlayBtn" title="Reproducir / Pausar">▶</button>
+        </div>
+
+        <div class="timeline-row">
+          <span class="time-label" id="currentTime">00:00</span>
+          <div class="timeline-bar-bg" id="timelineBarBg">
+            <div class="timeline-bar-fill" id="timelineBarFill"></div>
+          </div>
+          <span class="time-label" id="totalTime">02:00</span>
+        </div>
+      </div>
+
+      <!-- Acciones Extras: Ver Video Oficial & Ver Letra -->
+      <div class="player-side-cell">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-youtube-official" id="btnYoutubeOfficial">
+          <span>↗ Abrir en YouTube</span>
+        </a>
+        <button class="btn-lyrics-modal" id="viewLyricsBtn">
+          <span>📜 Ver Letra</span>
+        </button>
+        <button class="btn-close-player" id="closePlayerBtn" title="Cerrar reproductor">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL DIALOG (LETRAS COMPLETAS & FICHA TÉCNICA)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-window">
+      <div class="modal-header-bar">
+        <div class="modal-header-titles">
+          <h3 id="modalTitle">Título del Documento</h3>
+          <p id="modalSubtitle">Subtítulo o Unidad</p>
+        </div>
+        <button class="modal-btn-close" id="modalCloseBtn" title="Cerrar">✕</button>
+      </div>
+
+      <div class="modal-scrollable-body" id="modalBody">
+        <!-- Contenido dinámico -->
+      </div>
+
+      <div class="modal-footer-bar">
+        <button class="btn-apple-glass" id="modalCopyBtn" style="padding: 0.45rem 1rem;">
+          📋 Copiar Texto
+        </button>
+        <button class="btn-apple-primary" id="modalActionBtn" style="padding: 0.45rem 1.2rem;">
+          Acción
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificación Toast -->
+  <div class="toast-bar" id="toastBar">
+    <span>🛡️</span>
+    <span id="toastMessage">Operación realizada con éxito</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data/content.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
